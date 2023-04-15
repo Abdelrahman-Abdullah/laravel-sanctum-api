@@ -23,8 +23,10 @@ class ProductController extends Controller
         Product::create($request->all());
     }
 
-    public function show($id)
+    public function show(Product $product)
     {
+        return $product;
+
         return Product::findOrFail($id);
     }
     public function delete($id)
